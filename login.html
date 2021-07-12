@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<head>
+    <title>LOGIN PAGE</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    .hero {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/web.jpg);
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+    }
+
+    .form-box {
+        width: 380px;
+        height: 430px;
+        position: relative;
+        margin: 6% auto;
+        background: #fff;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    .button-box {
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px #ff61241f;
+        border-radius: 40px;
+
+    }
+
+    .toggle-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+    }
+
+    #button {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border-radius: 10px;
+        transition: .5s ease;
+    }
+
+    .social-icons {
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    .social-icons img {
+        width: 30px;
+        margin: 0 12px;
+        box-shadow: 0 0 20px 0 #7f7f7f3d;
+        cursor: pointer;
+
+
+    }
+
+    .input-group {
+        top: 180px;
+        position: absolute;
+        width: 280px;
+        transition: .5s ease;
+    }
+
+    .input-field {
+        width: 300px;
+        padding: 5px 0;
+        margin: 15px 0;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        background: transparent;
+        outline: none;
+
+    }
+
+    .submit-btn {
+        width: 85%;
+        text-align: center;
+        align-items: center;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        border: 0;
+        outline: none;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border-radius: 30px;
+        margin-top: 1%;
+    }
+
+    .check-box {
+        margin: 10px 10px 10px 0;
+    }
+
+    .span {
+        color: #777;
+        font-size: 12px;
+        bottom: 68px;
+        position: absolute;
+    }
+
+    #login {
+        left: 50px;
+
+    }
+
+    #register {
+        left: 450px;
+    }
+
+    .close{
+        position: absolute;
+        top: -40px;
+        right: -90px;
+       
+        height: 20px;
+        width: 30px;
+        border-radius: 50%;
+        box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
+        z-index: 0;
+
+    }
+</style>
+
+
+<body>
+    <div id='login-form' class='hero'>
+        <div class="form-box">
+            <div class="button-box">
+                <div id="button"></div>
+                <button type="button" class="toggle-button" onclick="login()">LOG IN</button>
+                <button type="button" class="toggle-button" onclick="register()"> REGISTER</button>
+                <img src="https://flyclipart.com/thumb2/close-button-transparent-png-pictures-645951.png" alt="" class="close"
+                 onclick="myfunc()">
+                </button>
+
+            </div>
+            <div class="social-icons">
+                <img src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="twitter">&nbsp;&nbsp;&nbsp;
+                <img src="https://image.flaticon.com/icons/png/512/145/145802.png" alt="facebook">&nbsp;&nbsp;&nbsp;
+                <img src="https://image.flaticon.com/icons/png/512/2991/2991148.png" alt="google">
+
+
+
+            </div>
+            <form id="login" class="input-group">
+                
+                <input type="text" class="input-field" placeholder="User Id" required id="myid1"><br>
+
+                
+                <input type="text" class="input-field" placeholder="Enter Password" required id="myid2"><br>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                
+                <button type="submit" class="submit-btn" onclick="myfunc()">LOGIN(2Times)</button>
+            </form>
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="User Id" required id="myid5"><br>
+                <input type="email" class="input-field" placeholder="Email Id" required id="myid3"><br>
+                <input type="text" class="input-field" placeholder="Enter Password" required id="myid4"><br>
+                <input type="checkbox" class="check-box"><span>I agreed to the terms and conditions</span>
+                <button type="submit" class="submit-btn" onclick="myfunc()">REGISTER</button>
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+        var x = document.getElementById("login")
+        var y = document.getElementById("register")
+        var z = document.getElementById("button")
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+    </script>
+    <script>
+         document.querySelector(".submit-btn").addEventListener("click",function(){
+             document.querySelector(".hero").style.display = "none"
+         })
+    </script>
+    <script>
+        function myfunc() {
+                window.location = "portfolio.html"
+            }
+            
+        
+    </script>
+    <script>
+        document.querySelector(".close").addEventListener("click",function(){
+            document.querySelector(".hero").style.display = "none";
+        })
+    </script>
+   
+</body>
